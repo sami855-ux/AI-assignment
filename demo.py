@@ -32,17 +32,17 @@ def find_empty(board):
     return None, None
 
 def is_valid(board, num, pos):
-    # Check row
+ 
     for i in range(9):
         if board[pos[0]][i] == num and pos[1] != i:
             return False
 
-    # Check column
+  
     for i in range(9):
         if board[i][pos[1]] == num and pos[0] != i:
             return False
 
-    # Check box
+  
     box_x = pos[1] // 3
     box_y = pos[0] // 3
 
@@ -75,7 +75,7 @@ def generate_board():
     board = [[0 for _ in range(9)] for _ in range(9)]
     solve_sudoku(board)
 
-    # Remove some numbers to create a puzzle
+   
     for _ in range(40):
         row = random.randint(0, 8)
         col = random.randint(0, 8)
